@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: "mastersys#258459"
+      POSTGRES_PASSWORD: "secret"
     ports:
       - "5432:5432"
     volumes:
@@ -18,7 +18,7 @@ services:
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: "postgres@pg.com"
-      PGADMIN_DEFAULT_PASSWORD: "mastersys#258459"
+      PGADMIN_DEFAULT_PASSWORD: "secret"
     ports:
       - "5050:80"   
     volumes:
