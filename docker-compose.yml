@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "mastersys#258459"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data 
+    networks:
+      - pg
+      
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "postgres@pg.com"
+      PGADMIN_DEFAULT_PASSWORD: "mastersys#258459"
+    ports:
+      - "5050:80"   
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres     
+    networks:
+      - pg
+
+networks: 
+  pg:
+    driver: bridge

@@ -1,0 +1,7 @@
+#folders and volumes
+backups/*
+pgadmin-data/*
+pgdata/*
+
+*.copy
+*.backup
